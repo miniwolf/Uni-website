@@ -1,8 +1,6 @@
 <?php
-$title = 'Frontpage';
-$desc  = 'Newspage for game related news';
-$content = "index.html";
-
 include("parser/MasterParser.php");
-$masterParser = new \parser\MasterParser(".");
+$masterParser = new \parser\MasterParser(".", 'FrontPage');
+$masterParser->setDesc('Newspage for game related news');
+$masterParser->setContentFile('/index/index.html');
 require_once('master.php');

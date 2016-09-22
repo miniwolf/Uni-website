@@ -13,10 +13,35 @@ class MasterParser {
     private $root;
     private $desc;
     private $title;
+    private $contentFile;
 
     function __construct($root, $title) {
         $this->root = $root;
         $this->title = $title;
+    }
+
+    private function PrintTitle() {
+        print_r('<title>MiNiWolF - ' . $this->title .'</title>');
+    }
+
+    private function PrintLinks() {
+        if ( !is_null($this->links)) {
+            include("StyleParser.php");
+            print_r(StyleParser::parse($this->links, $this->root));
+        }
+    }
+
+    private function PrintDescription() {
+        if ( !is_null($this->desc) ) {
+            print_r('<meta name="description" content="' . $this->desc . '" />');
+        }
+    }
+
+    public function PrintHeader() {
+        print_r('<link rel="stylesheet" type="text/css" href="' . $this->root . '/css/menu.css"/>');
+        $this->PrintTitle();
+        $this->PrintLinks();
+        $this->PrintDescription();
     }
 
     /**
@@ -33,26 +58,18 @@ class MasterParser {
         $this->desc = $desc;
     }
 
-    public function PrintHeader() {
-        print_r('<link rel="stylesheet" type="text/css" href="' . $this->root . '/css/menu.css"/>');
-        $this->PrintTitle();
-        $this->PrintLinks();
-        $this->PrintDescription();
+    /**
+     * @return mixed
+     */
+    public function getRoot() {
+        return $this->root;
     }
 
-    private function PrintTitle() {
-        print_r('<title>MiNiWolF - ' . $this->title .'</title>');
+    public function setContentFile($contentFile) {
+        $this->contentFile = $contentFile;
     }
 
-    private function PrintLinks() {
-        if ( !is_null($this->links)) {
-            print_r(StyleParser::parse($this->links, $this->root));
-        }
-    }
-
-    private function PrintDescription() {
-        if ( !is_null($this->desc) ) {
-            print_r('<meta name="description" content="' . $this->desc . '" />');
-        }
+    public function PrintContent() {
+        include $this->contentFile;
     }
 }

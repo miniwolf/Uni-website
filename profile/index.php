@@ -1,10 +1,9 @@
 <?php
-$title = 'Frontpage';
 $type = 'userProfile';
-$links = ["profile.css"];
-$desc = 'CV';
-$root = '../';
-$content = "profile.html";
 
-
+include("../parser/MasterParser.php");
+$masterParser = new \parser\MasterParser('../', 'FrontPage');
+$masterParser->setLinks(["profile.css"]);
+$masterParser->setDesc('CV');
+$masterParser->setContentFile('profile.html');
 require_once '../master.php';

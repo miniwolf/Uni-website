@@ -1,10 +1,11 @@
 <nav id="mainNav">
     <ul class="inlineContainer">
-        <li><a href="<?php echo $root; ?>/">Home</a></li>
-        <li><a href="<?php echo $root; ?>/profile">Profile</a></li>
+        <?php
+        include("menu/Menu.php");
+        $menu = new Menu($masterParser->getRoot());
+        $menu->ConstructMenu();
+        ?>
         <!--
-        <li><a href="article.html">Articles</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
         <li>
             <a>Menu</a>
             <ul class="submenu">
@@ -17,11 +18,3 @@
         </li>-->
     </ul>
 </nav>
-<script>
-    var urlRegExp = new RegExp(window.location.pathname.replace(/\/$/,''));
-    $('#mainNav').find('li').each(function() {
-        if (urlRegExp.test(this.href)) {
-            $(this).parent().addClass('selected');
-        }
-    });
-</script>
