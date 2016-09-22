@@ -1,0 +1,87 @@
+<div id="centerb">
+	<h1>OpenPinGL <b>c++</b> conventions</h1>
+	<div class="h3">
+		<div class="h3_left">Intro</div>
+	</div>
+  	<div class="mid_content">
+		<p>This is in no way me, telling you how to structure your code. This is a suggestion for how you could do it.</p>
+		<p>Many have been trying to tell me how to do things, I've been through camelcase, different types of bracket structuring, and lots of other painful discussions with people having a very weird view on things.</p>
+		<p> I'm not gonna name anyone but all has in some way influenced me to finally come up with my own ways of doing things.</p>
+	</div>
+	<br/>
+	<div class="h3">
+		<div class="h3_left">//Commenting</div>
+	</div>
+  	<div class="mid_content">
+		<pre><code>/* for multiple lined information about a method. */
+// Single lined for statements or method calls, this will never have to be more than one line, 
+// if it does maybe you should concider removing some of the unnecessary text from the comments
+#if 0 
+    commenting out this code(); 
+#endif</code></pre>
+			<p>- The reason for not using /* instead to comment out your code is shown in this example:</p>
+		<pre><code>/*
+    foo();
+    bar(baz);
+    /* This will cause flumuxiation */
+    baz = fib + 3;
+*/</code></pre>
+		<p>What will happen is the first */ will cause the comment to end, because of the missing nesting of comment blocks.</p>
+	</div>
+	<br/>
+	<div class="h3">
+		<div class="h3_left">Naming</div>
+	</div>
+	<div class="mid_content">
+		<p><code>void MethodName() { }</code></p>
+		<div class="indent">Methods I find, in some way, immutable and not like a variable you can change to give some other result to the rest of the exucution.</div>
+		<p><code>Class Foo { };</code></p>
+		<div class="indent">Not declaring classes with uppercase first letter makes your code start to get wierd. Is it a type, class, dimmer. Write classes with uppercase.</div>
+		<p><code>Foo* foo = new Foo;</code></p>
+		<div class="indent">However the instantiation will have to be all lower case because we now have a type we can do some changing on. Every instance of classes, types and so on, just keep it lower case.</div>
+		<p><code>const int MAX_DIMMER = 1337;</code></p>
+		<div class="indent">All constants must all be uppercase and using underscore to seperate words. However try minimizing the use of constants. Some times implementing a getter method is better:</div>
+		<p><code>int GetMaxDimmer() { return 1337; } // Also takes up the same amount of space.</code></p>
+		<p><code>char* textstringforprinting;</code></p>
+		<div class="indent">Instances of different types, should be in lowercase, those of you using different IDE tool don't mind camelcase(textStringForPrinting), but the rest of us has to live with always has to misclicking the shift button for caps or even control if you're about to enter the 4am point at night.</div>
+	</div>
+	<br/>
+	<div class="h3">
+		<div class="h3_left">{Braces}</div>
+	</div>
+	<div class="mid_content">
+		<p>First of all, I've been told there is a lot of confusion how to name [] brackets and braces {}, some countries switch these, even call them the same. Therefore to avoid any confusion, from here on, brackets are squared [] and braces are curled {}.</p>
+		<p>There is alot of arguing where the braces should go, I'll show both and I don't mind using either, but there's pros and cons for both.</p>
+		<pre><code>int main(void) {
+    int foo = 0;
+    return foo;
+}</code></pre>
+		<p>First of all this saves you one line of code, which makes your code look more compact. Some might like the more traditional way of putting the starting brackets in its own line. However some like to comment out different loops to check a simple run of the code inside therefore this might not work as wonderess.</p>
+		<pre><code>int main(void)
+{
+    int foo = 0;
+    return foo;
+}</code></pre>
+		<p>The good thing about this style is that the braces are aligned, it's very easy to see where the method main is ended. For some that might be too intuitive and will not see the advantage of doing it like this.</p>
+		<p>But for those of you who like your code to be symmetric and pretty. Insert a bunny and go code, I don't mind this at all. //But the bunny will have to be there</p>
+		<br/>
+		<p>When you have a statement, i.e. using an if statement. Should you be using braces or no braces. I prefer to use the two styles written below.</p>
+		<pre><code>if (condition) { statement; } </code></pre>
+		<p>This has some advantages. It's only one line of code and it's clean to read. However if your statement or condition takes up too much linespace, I prefer using this second choice.</p>
+		<pre><code>if (condition)
+    statement;
+</code></pre>
+		<p>However never use braces in this one line statement. It just takes up an ekstra line of code, and may lower the readability of your code.</p>
+	</div>
+	<br/>
+	<div class="h3">
+		<div class="h3_left">(Parenthesis)</div>
+	</div>
+	<div class="mid_content">
+		<p>Method calls have their parenthesis close to the name, as I don't think it makes any sense to have them anywhere else.
+		<code>MethodName(param1);</code></p>
+		<p>When writing ifs you should keep white space before and after the parenthesis to let it be easy to spot the start and the end of your if condition.</p>
+        <pre><code>if ( GetNumber(index--) &lt;= this-&gt;id ) </code></pre>
+		<p>The same goes for a for- and while loop</p>
+	</div>
+</div>

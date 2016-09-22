@@ -1,0 +1,121 @@
+.skill_list{
+    padding:1.5em 0 0 2em;
+    display:inline-block;
+}
+.skill1,.skill2{
+    float:left;
+    width:30%;
+}
+.skill1 h4,.skill2 h4{
+    color:#333;
+    font-weight:600;
+    margin-bottom:1em;
+    display:inline-block;
+}
+.skill1 ul,.skill2 ul{
+    padding-left:1em;
+}
+.skill1 ul li,.skill2 ul li{
+    color:#333;
+}
+
+@media only screen and (min-width: 800px) {
+    .IH {
+        -webkit-box-align: start;
+        box-align: start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+.IH {
+    margin-bottom: 48px;
+}
+.IH {
+    margin: auto;
+}
+
+@media only screen and (min-width: 800px) {
+    .fo {
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        background-color: white;
+        display: inline-block;
+        margin: 8px;
+    }
+}
+
+.fo {
+    vertical-align: top;
+}
+
+@media only screen and (min-width: 800px) {
+    .ez {
+        border-bottom: 1px solid #e0e0e0;
+    }
+}
+
+.ez {
+    display: table;
+    font-size: 24px;
+    height: 60px;
+    line-height: 25px;
+    width: 100%;
+}
+
+.jga {
+    display: table-cell;
+    padding: 0 8px 0 20px;
+    vertical-align: middle;
+    width: 38px;
+}
+
+.lga {
+    color: rgba(0,0,0,0.54);
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.iga {
+    display: table-cell;
+    padding: 0 20px 0 8px;
+    vertical-align: middle;
+    width: 36px;
+}
+
+.fz {
+    display: inline-block;
+    height: 36px;
+    vertical-align: middle;
+    width: 36px;
+}
+
+.hga {
+    background: no-repeat url('//ssl.gstatic.com/ac/material/chevron_right_grey600_36dp.png');
+    -webkit-background-size: 36px 36px;
+    background-size: 36px 36px;
+    height: 36px;
+    width: 36px;
+}
+
+.gga {
+    font-size: 15px;
+    padding: 0 24px;
+}
+
+.RP {
+    margin: 24px 0;
+}
+
+a.HH {
+    color: #3c80f6;
+    display: block;
+    margin: 8px 0;
+    text-decoration: none;
+}
