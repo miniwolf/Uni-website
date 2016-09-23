@@ -52,6 +52,7 @@
 }
 
 .fo {
+    max-width: 230px;
     vertical-align: top;
 }
 
@@ -73,7 +74,7 @@
     display: table-cell;
     padding: 0 8px 0 20px;
     vertical-align: middle;
-    width: 38px;
+    width: 25px;
 }
 
 .lga {
@@ -118,4 +119,12 @@ a.HH {
     display: block;
     margin: 8px 0;
     text-decoration: none;
+}
+
+.skills {
+    padding: 0 10px 0 10px;
+}
+
+#sidebar {
+    overflow: hidden;
 }

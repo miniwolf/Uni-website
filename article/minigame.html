@@ -1,5 +1,5 @@
 <article>
-    <a href="https://unity3d.com/" title="Unity 3D"><img class="articleHeader" src="../../gallery/unity-3d.jpg" alt="Article Header"></a>
+    <a href="https://unity3d.com/" title="Unity 3D"><img class="articleHeader" src="../gallery/unity-3d.jpg" alt="Article Header"></a>
     <strong class="tag">Games</strong>
     <p class="articleBody">This project involves making my first minigame using two specific ideas. Procedural generation of the map, the movable objects in the game and player objects. The second idea is to validate the map and find the shortest path to complete the game using a BFS search as an AI solving the map. The project made using the game engine <a href="https://unity3d.com/">Unity</a> made in Denmark and the project is written in c#.</p>
 
@@ -10,17 +10,17 @@
     <h1>Building the walls</h1>
     <p class="articleBody">Even though we are building randomly generated walls, I still want to add some symmetry. This symmetry is chosen randomly. When I add walls we either flip these horizontally, vertically or both. First pictures of the pictures below is when one tile a time is painted. The rest are for two tiles a time with different random symmetries:</p>
 
-    <img src="../../gallery/pic1.png" alt="" style="width: 20%;">
-    <img src="../../gallery/pic2.png" alt="" style="width: 20%;">
-    <img src="../../gallery/pic3.png" alt="" style="width: 20%;">
-    <img src="../../gallery/pic4.png" alt="" style="width: 20%;">
+    <img src="../gallery/pic1.png" alt="" style="width: 20%;">
+    <img src="../gallery/pic2.png" alt="" style="width: 20%;">
+    <img src="../gallery/pic3.png" alt="" style="width: 20%;">
+    <img src="../gallery/pic4.png" alt="" style="width: 20%;">
 
     <p class="articleBody">The number of walls on the gameboard is chosen randomly along with a direction. The direction is chosen to be orthogonal to the border. As we will not see any effect from a wall overlapping with the borders of the game. I.e. if we are at the left most wall we can only go to the right from a point on the wall.</p>
     <p class="articleBody">Each wall I place starts from a random point on the wall. In iteration I build walls going out from the last placed a length is chosen from 0 to wall length - 1. If length is 0 we terminate the iteration. Using this recursive procedure to add walls going further out from the borders of the map.</p>
 
     <p class="articleBody">The direction of the new wall is placed orthogonal from the last one. The result may look like this (the numbers label the iterations):</p>
 
-    <img src="../../gallery/pic5.png" alt="">
+    <img src="../gallery/pic5.png" alt="">
 
     <p class="articleBody">From the picture we can see that the next wall will always be shorter. So the recursive function will eventually terminate.</p>
 
@@ -36,7 +36,7 @@
     <p class="articleBody">The next step in wall generation is to check find the largest area and fill all others with walls. By iterating through the board grid and marking free tiles as part of an area-index as an area ID. Last step is to iterate the board and filling tiles not having the area ID with the highest count.</p>
     <p class="articleBody">Example of wall generation seen here.</p>
 
-    <img src="../../gallery/procedural_1.PNG" alt="">
+    <img src="../gallery/procedural_1.PNG" alt="">
 
     <h1>Object placement</h1>
     <p class="articleBody">Now that our walls are generated and the game area has been structured, I start generating objects. We need at least one pair of green player balls and zero or more obstacles (represented as blue balls in the game).</p>
